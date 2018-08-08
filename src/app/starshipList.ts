@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { StarshipApi, IFilmMeta } from './starshipApi';
+import { IFilmMeta, StarshipApi } from './starshipApi';
 
 @Component({
   selector: 'app-root',
