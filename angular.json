@@ -116,6 +116,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "example-nested-api-via-observables"
 }
