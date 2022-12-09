@@ -1,6 +1,5 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "defaultProject": "example-nested-api-via-observables",
   "newProjectRoot": "projects",
   "projects": {
     "example-nested-api-via-observables": {
