@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, forkJoin } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { Observable, forkJoin, map, mergeMap } from 'rxjs';
 
 import { jsonRequestHeaders } from './httpUtils';
 
