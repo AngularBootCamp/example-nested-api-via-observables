@@ -5,9 +5,9 @@ import { IFilmMeta, StarshipApi } from './starshipApi';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './starshipList.html'
+  templateUrl: './app.component.html'
 })
-export class StarshipListComponent {
+export class AppComponent {
   starships: Observable<IFilmMeta[]>;
 
   constructor(api: StarshipApi) {
