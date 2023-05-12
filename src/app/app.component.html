@@ -1,12 +1,11 @@
-<section class="card">
-  <div class="card-content">
-    <div class="card-title">Starships</div>
-    <p>Can take a while to load, see console...</p>
+<article>
+  <header>Starships</header>
 
-    <ul class="collection">
-      <li class="collection-item" *ngFor="let s of starships | async">
-        {{ s.name }} (in {{ s.filmName }})
-      </li>
-    </ul>
-  </div>
-</section>
+  <p>Can take a while to load, see console...</p>
+
+  <ul>
+    <li *ngFor="let s of starships | async">
+      {{ s.name }} (in {{ s.filmName }})
+    </li>
+  </ul>
+</article>

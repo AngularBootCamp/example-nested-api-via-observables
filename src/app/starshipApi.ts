@@ -21,7 +21,7 @@ export class StarshipApi {
   constructor(private http: HttpClient) {}
 
   starships(): Observable<IFilmMeta[]> {
-    const url = 'https://swapi.dev/api/starships/';
+    const url = 'https://swapi.devhttps://api.angularbootcamp.com/starships/';
     return this.http
       .get<{ results: IFilmMeta[] }>(url, {
         headers: jsonRequestHeaders
