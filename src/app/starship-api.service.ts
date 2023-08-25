@@ -4,36 +4,34 @@ import { Observable, forkJoin, map, mergeMap } from 'rxjs';
 
 import { jsonRequestHeaders } from './httpUtils';
 
-export interface IFilmMeta {
+export interface FilmMeta {
   name: string;
   filmName?: string;
-  films: any[];
+  films: string[];
 }
 
-export interface IFilm {
+export interface Film {
   title: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
-export class StarshipApi {
+@Injectable({ providedIn: 'root' })
+export class StarshipApiService {
   constructor(private http: HttpClient) {}
 
-  starships(): Observable<IFilmMeta[]> {
+  starships(): Observable<FilmMeta[]> {
     const url = 'https://swapi.devhttps://api.angularbootcamp.com/starships/';
     return this.http
-      .get<{ results: IFilmMeta[] }>(url, {
+      .get<{ results: FilmMeta[] }>(url, {
         headers: jsonRequestHeaders
       })
       .pipe(
         // extract results field
         map(shipWrapper => shipWrapper.results),
         mergeMap(ships => {
-          const shipObservables = ships.map((ship: IFilmMeta) => {
+          const shipObservables = ships.map((ship: FilmMeta) => {
             console.log('GETting film data for ' + ship.name);
             return this.http
-              .get<IFilm>(ship.films[0], {
+              .get<Film>(ship.films[0], {
                 headers: jsonRequestHeaders
               })
               .pipe(

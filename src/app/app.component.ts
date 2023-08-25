@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { IFilmMeta, StarshipApi } from './starshipApi';
+import { FilmMeta, StarshipApiService } from './starship-api.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  starships: Observable<IFilmMeta[]>;
+  starships: Observable<FilmMeta[]>;
 
-  constructor(api: StarshipApi) {
+  constructor(api: StarshipApiService) {
     this.starships = api.starships();
   }
 }
