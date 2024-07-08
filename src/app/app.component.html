@@ -4,8 +4,8 @@
   <p>Can take a while to load, see console...</p>
 
   <ul>
-    <li *ngFor="let s of starships | async">
-      {{ s.name }} (in {{ s.filmName }})
-    </li>
+    @for (s of starships | async; track s) {
+      <li>{{ s.name }} (in {{ s.filmName }})</li>
+    }
   </ul>
 </article>
